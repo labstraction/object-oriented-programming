@@ -1,9 +1,7 @@
-class Teacher{
+class Teacher extends Person{
 
     constructor(name, surname, yob, students){
-        this.name = name;
-        this.surname = surname;
-        this.yob = yob;
+        super(name, surname, yob);
         this.students = students;
     }
 
@@ -22,15 +20,20 @@ class Teacher{
     }
 
     toString(){
-
+        const bestStudent = this.findBestStundent();
+        return super.toString()
+             + "MIGLIOR STUDENTE: " + bestStudent.name + " " + bestStudent.surname + '\n'
     }
     //NOME: Andrea
     //COGNOME: Asioli
     //ETA': 45
     //MIGLIOR STUDENTE: Valentina Cherubini
 
-    calculateAge(){
-
-    }
+    // calculateAge(){
+    //     const actualDate = new Date();
+    //     const actualYear = actualDate.getFullYear()
+    //     const age = actualYear - this._yob;
+    //     return age;
+    // }
     //45
 }
